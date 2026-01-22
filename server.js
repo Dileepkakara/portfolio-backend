@@ -11,6 +11,7 @@ const skillRoutes = require('./routes/skills');
 const aboutRoutes = require('./routes/about');
 const messageRoutes = require('./routes/messages');
 const uploadRoutes = require('./routes/upload');
+const visitorRoutes = require('./routes/visitors');
 
 const app = express();
 
@@ -51,6 +52,7 @@ app.use('/api/skills', skillRoutes);
 app.use('/api/about', aboutRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/visitors', visitorRoutes);
 
 // Root Route
 app.get('/', (req, res) => {
