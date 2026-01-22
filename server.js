@@ -46,6 +46,11 @@ app.use('/api/about', aboutRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/upload', uploadRoutes);
 
+// Root Route
+app.get('/', (req, res) => {
+  res.json({ message: 'Dileep Portfolio API is running', status: 'ok' });
+});
+
 // Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
