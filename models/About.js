@@ -7,6 +7,7 @@ const aboutSchema = new mongoose.Schema({
   location: String,
   education: String,
   cvLink: String,
+  profilePhoto: String,
   updatedAt: { type: Date, default: Date.now }
 });
 
