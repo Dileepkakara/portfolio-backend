@@ -23,10 +23,10 @@ cloudinary.config({
 
 // Middleware
 app.use(cors({
-  origin: ['https://portfolio-frontend-three-tan.vercel.app', 'http://localhost:3000', 'http://localhost:5173'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: '*',
+  credentials: false,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
