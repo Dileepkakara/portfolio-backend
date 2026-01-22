@@ -11,7 +11,6 @@ const skillRoutes = require('./routes/skills');
 const aboutRoutes = require('./routes/about');
 const messageRoutes = require('./routes/messages');
 const uploadRoutes = require('./routes/upload');
-const visitorRoutes = require('./routes/visitors');
 
 const app = express();
 
@@ -23,14 +22,8 @@ cloudinary.config({
 });
 
 // Middleware
-app.use(cors({
-  origin: '*',
-  credentials: false,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
-}));
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // MongoDB Connection
 const mongoOptions = {
@@ -52,7 +45,6 @@ app.use('/api/skills', skillRoutes);
 app.use('/api/about', aboutRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/upload', uploadRoutes);
-app.use('/api/visitors', visitorRoutes);
 
 // Root Route
 app.get('/', (req, res) => {
